@@ -34,7 +34,7 @@ It uses **React**, a **dark mode theme**, and **grid layouts** to organize the c
 ---
 
 ## Project Structure
-
+```
 react_songs/
 ├── src/
 │ ├── assets/
@@ -46,7 +46,7 @@ react_songs/
 │ └── index.css
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## Installation & Setup
