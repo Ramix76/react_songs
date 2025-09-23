@@ -64,28 +64,32 @@ It uses **React**, **Vite**, **React Router**, a **dark mode theme**, and **grid
 │   │   │   ├── Card.jsx
 │   │   │   └── Card.module.css
 │   │   ├── Errors
+│   │   │   ├── ErrorBoundary.jsx
 │   │   │   └── NotFound.jsx
-│   │   └── features
-│   │       ├── Contact
-│   │       │   ├── Contact.jsx
-│   │       │   ├── Contact.module.css
-│   │       │   └── index.js
-│   │       ├── Hobbies
-│   │       │   ├── Hobbies.jsx
-│   │       │   ├── Hobbies.module.css
-│   │       │   ├── hobbiesData.js
-│   │       │   └── index.js
-│   │       ├── Home
-│   │       │   └── Home.jsx
-│   │       ├── Post
-│   │       │   ├── ApiPostCRUD.jsx
-│   │       │   ├── ApiPostCRUD.module.css
-│   │       │   └── index.js
-│   │       └── Songs
-│   │           ├── index.js
-│   │           ├── Songs.jsx
-│   │           ├── Songs.module.css
-│   │           └── songsData.js
+│   │   ├── features
+│   │   │   ├── Contact
+│   │   │   │   ├── Contact.jsx
+│   │   │   │   ├── Contact.module.css
+│   │   │   │   └── index.js
+│   │   │   ├── Hobbies
+│   │   │   │   ├── Hobbies.jsx
+│   │   │   │   ├── Hobbies.module.css
+│   │   │   │   ├── hobbiesData.js
+│   │   │   │   └── index.js
+│   │   │   ├── Home
+│   │   │   │   └── Home.jsx
+│   │   │   ├── Post
+│   │   │   │   ├── ApiPostCRUD.jsx
+│   │   │   │   ├── ApiPostCRUD.module.css
+│   │   │   │   └── index.js
+│   │   │   └── Songs
+│   │   │       ├── index.js
+│   │   │       ├── Songs.jsx
+│   │   │       ├── Songs.module.css
+│   │   │       └── songsData.js
+│   │   └── TestError
+│   │       ├── index.js
+│   │       └── TestError.jsx
 │   ├── index.css
 │   ├── main.jsx
 │   └── routes
@@ -145,10 +149,44 @@ Go to http://localhost:5173 (or the port Vite provides) to view the project.
 ## Routes
 
 - `/` or `/home` → Home component
-- `/canciones` → Songs component
+- `/songs` → Songs component
 - `/hobbies` → Hobbies component
 - `/contact` → Contact form component
 - Any other route → 404 Not Found component
+
+---
+
+## 🧪 Error Testing
+
+This section explains how to test different types of errors in the application using the `TestError` component and the `ErrorBoundary`.
+
+### 1. ErrorBoundary
+
+`ErrorBoundary` catches errors in rendering, lifecycle methods, or hooks of child components to prevent the entire UI from crashing.
+
+- **Location:** `src/components/Errors/ErrorBoundary.jsx`
+- **How to test:**
+  1. Navigate to `/test-error` via the navigation menu.
+  2. Use the buttons to simulate errors:
+     - **Throw error in render:** forces an error during the render of `TestError`.
+     - **Throw error in useEffect:** forces an error inside a `useEffect` hook.
+     - **Throw error on click:** triggers an error when clicking a button.
+  3. The `ErrorBoundary` will display a fallback message and allow you to reset or go back.
+
+### 2. NotFound Page (404)
+
+When the user navigates to a non-existent route, the `NotFound` component is rendered.
+
+- **Location:** `src/components/Errors/NotFound.jsx`
+- **How to test:**
+  1. Enter a random URL in the browser, e.g., `/some-non-existent-page`.
+  2. The page will show a "404 - Page not found" message and a button to navigate back to `/home`.
+
+### 3. Notes
+
+- `ErrorBoundary` **does not catch 404 route errors**, only runtime errors inside components.
+- To test fetch failures or child component render errors, `/test-error` and its buttons are the easiest way.
+- It's recommended to keep error tests isolated so they don't interfere with the main app navigation.
 
 ---
 
