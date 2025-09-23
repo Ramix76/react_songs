@@ -1,10 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "../components/Home/Home";
-import Songs from "../components/Songs/Songs";
-import Hobbies from "../components/Hobbies/Hobbies";
-import Contact from "../components/Contact/Contact";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+
+// Clean imports thanks to feature index.js files
+import Home from "../components/features/Home/Home";
+import Songs from "../components/features/Songs";
+import Hobbies from "../components/features/Hobbies";
+import Contact from "../components/features/Contact";
+import Posts from "../components/features/Post";
 import NotFound from "../components/Errors/NotFound";
-import ApiPostCRUD from "../components/ApiPostCRUD/ApiPostCRUD";
 
 export default function AppRouter() {
   return (
@@ -12,20 +14,45 @@ export default function AppRouter() {
       <div>
         {/* Navigation Menu */}
         <nav style={{ marginBottom: "20px" }}>
-          <Link to="/home" style={{ marginRight: "15px" }}>🏠 Home</Link>
-          <Link to="/canciones" style={{ marginRight: "15px" }}>🎵 Songs</Link>
-          <Link to="/hobbies" style={{ marginRight: "15px" }}>🎯 Hobbies</Link>
-          <Link to="/posts" style={{ marginRight: "15px" }}>📝 Posts</Link>
-          <Link to="/contact" style={{ marginLeft: "18px" }}>✉️ Contact</Link>
+          <NavLink
+            to="/home"
+            style={({ isActive }) => ({ marginRight: "15px", fontWeight: isActive ? "bold" : "normal" })}
+          >
+            🏠 Home
+          </NavLink>
+          <NavLink
+            to="/songs"
+            style={({ isActive }) => ({ marginRight: "15px", fontWeight: isActive ? "bold" : "normal" })}
+          >
+            🎵 Songs
+          </NavLink>
+          <NavLink
+            to="/hobbies"
+            style={({ isActive }) => ({ marginRight: "15px", fontWeight: isActive ? "bold" : "normal" })}
+          >
+            🎯 Hobbies
+          </NavLink>
+          <NavLink
+            to="/posts"
+            style={({ isActive }) => ({ marginRight: "15px", fontWeight: isActive ? "bold" : "normal" })}
+          >
+            📝 Posts
+          </NavLink>
+          <NavLink
+            to="/contact"
+            style={({ isActive }) => ({ marginLeft: "18px", fontWeight: isActive ? "bold" : "normal" })}
+          >
+            ✉️ Contact
+          </NavLink>
         </nav>
 
         {/* Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/canciones" element={<Songs />} />
+          <Route path="/songs" element={<Songs />} />
           <Route path="/hobbies" element={<Hobbies />} />
-          <Route path="/posts" element={<ApiPostCRUD />} /> 
+          <Route path="/posts" element={<Posts />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

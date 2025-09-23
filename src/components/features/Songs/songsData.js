@@ -1,0 +1,44 @@
+const songs = [
+  {
+    title: "Enter Sandman",
+    album: "Metallica (The Black Album)",
+    author: "Metallica",
+    albumCover: "https://upload.wikimedia.org/wikipedia/en/2/2c/Metallica_-_Metallica_cover.jpg",
+    duration: 331,
+    rating: 5
+  },
+  {
+    title: "Perfect",
+    album: "÷ (Divide)",
+    author: "Ed Sheeran",
+    albumCover: "https://upload.wikimedia.org/wikipedia/en/4/45/Divide_cover.png",
+    duration: 263,
+    rating: 5
+  },
+  {
+    title: "Diamonds",
+    album: "Unapologetic",
+    author: "Rihanna",
+    albumCover: "https://i.ytimg.com/vi/lWA2pjMjpBs/hqdefault.jpg",
+    duration: 228,
+    rating: 4
+  },
+  {
+    title: "Lose Yourself",
+    album: "8 Mile (Soundtrack)",
+    author: "Eminem",
+    albumCover: "https://i.ytimg.com/vi/_Yhyp-_hX2s/hqdefault.jpg",
+    duration: 326,
+    rating: 5
+  },
+  {
+    title: "With or Without You",
+    album: "The Joshua Tree",
+    author: "U2",
+    albumCover: "https://i.ytimg.com/vi/ujNeHIo7oTE/hqdefault.jpg",
+    duration: 296,
+    rating: 5
+  }
+];
+
+export default songs;

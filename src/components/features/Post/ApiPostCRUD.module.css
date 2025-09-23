@@ -113,5 +113,5 @@ button[type="button"] {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 15px;
+  margin-top: auto;
 }
