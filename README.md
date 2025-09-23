@@ -58,25 +58,34 @@ It uses **React**, **Vite**, **React Router**, a **dark mode theme**, and **grid
 │   ├── App.css
 │   ├── App.jsx
 │   ├── assets
-│   │   ├── react.svg
-│   │   └── songs.json
+│   │   └── react.svg
 │   ├── components
-│   │   ├── ApiPostCRUD
-│   │   │   ├── ApiPostCRUD.jsx
-│   │   │   └── ApiPostCRUD.module.css
-│   │   ├── Contact
-│   │   │   ├── Contact.jsx
-│   │   │   └── Contact.module.css
+│   │   ├── common
+│   │   │   ├── Card.jsx
+│   │   │   └── Card.module.css
 │   │   ├── Errors
 │   │   │   └── NotFound.jsx
-│   │   ├── Hobbies
-│   │   │   ├── Hobbies.jsx
-│   │   │   └── Hobbies.module.css
-│   │   ├── Home
-│   │   │   └── Home.jsx
-│   │   └── Songs
-│   │       ├── Songs.jsx
-│   │       └── Songs.module.css
+│   │   └── features
+│   │       ├── Contact
+│   │       │   ├── Contact.jsx
+│   │       │   ├── Contact.module.css
+│   │       │   └── index.js
+│   │       ├── Hobbies
+│   │       │   ├── Hobbies.jsx
+│   │       │   ├── Hobbies.module.css
+│   │       │   ├── hobbiesData.js
+│   │       │   └── index.js
+│   │       ├── Home
+│   │       │   └── Home.jsx
+│   │       ├── Post
+│   │       │   ├── ApiPostCRUD.jsx
+│   │       │   ├── ApiPostCRUD.module.css
+│   │       │   └── index.js
+│   │       └── Songs
+│   │           ├── index.js
+│   │           ├── Songs.jsx
+│   │           ├── Songs.module.css
+│   │           └── songsData.js
 │   ├── index.css
 │   ├── main.jsx
 │   └── routes
